@@ -17,7 +17,7 @@ A Neovim plugin that automatically runs [nvchecker](https://github.com/lilydjwg/
 ```lua
 return {
   {
-    "yourusername/nvchecker.nvim",
+    "envolution/nvchecker.nvim",
     config = function()
       require("nvchecker").setup()
     end,
@@ -31,7 +31,7 @@ return {
 
 ```lua
 {
-  "yourusername/nvchecker.nvim",
+  "envolution/nvchecker.nvim",
   config = true,
   ft = "toml",
 }
@@ -41,7 +41,7 @@ return {
 
 ```lua
 use {
-  "yourusername/nvchecker.nvim",
+  "envolution/nvchecker.nvim",
   config = function()
     require("nvchecker").setup()
   end,
@@ -55,6 +55,7 @@ use {
 - [nvchecker](https://github.com/lilydjwg/nvchecker) installed and available in PATH
 
 Install nvchecker:
+
 ```bash
 pip install nvchecker
 ```
@@ -62,11 +63,13 @@ pip install nvchecker
 ## Usage
 
 ### Automatic
+
 - Open any file named `*nvchecker.toml` (e.g., `nvchecker.toml`, `my-nvchecker.toml`)
 - Save the file - nvchecker runs automatically
 - Results appear in a floating window
 
 ### Manual
+
 - `:NvCheckerRun` - Run nvchecker on current file
 - `<leader>nr` - Same as above (in nvchecker.toml files)
 - `:NvCheckerToggle` - Toggle auto-run on save
@@ -88,6 +91,7 @@ require("nvchecker").setup({
 ## Example
 
 1. Create a file named `nvchecker.toml`:
+
 ```toml
 [github]
 source = "github"
