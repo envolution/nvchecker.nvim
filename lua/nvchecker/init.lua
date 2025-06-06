@@ -6,6 +6,7 @@ M.config = {
 	auto_run = true,
 	show_success_message = true,
 	timeout = 30000, -- 30 seconds
+	keyfile = nil, -- Path to the keyfile for `nvchecker -k`
 	window = {
 		height = 10,
 		border = "rounded",
@@ -86,10 +87,17 @@ local function run_nvchecker(filepath)
 
 	show_message("Running nvchecker for " .. vim.fn.fnamemodify(filepath, ":t"))
 
+	-- Build the command to execute
+	local cmd = { "nvchecker", "-c", filepath }
+	if M.config.keyfile and M.config.keyfile ~= "" then
+		table.insert(cmd, "-k")
+		table.insert(cmd, M.config.keyfile)
+	end
+
 	local output = {}
 	local start_time = vim.fn.reltime()
 
-	running_jobs[filepath] = vim.fn.jobstart({ "nvchecker", "-c", filepath }, {
+	running_jobs[filepath] = vim.fn.jobstart(cmd, {
 		stdout_buffered = true,
 		stderr_buffered = true,
 		on_stdout = function(_, data)
