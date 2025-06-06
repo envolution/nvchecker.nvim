@@ -78,12 +78,13 @@ pip install nvchecker
 
 ```lua
 require("nvchecker").setup({
-  auto_run = true,              -- Auto-run on save
-  show_success_message = true,  -- Show success notifications  
-  timeout = 30000,              -- Timeout in milliseconds (30s)
+  auto_run = true,                -- Auto-run on save
+  show_success_message = true,    -- Show success notifications  
+  timeout = 30000,                -- Timeout in milliseconds (30s)
+  keyfile = /path/to/keyfile.toml -- NVChecker Keyfile
   window = {
-    height = 10,                -- Output window height
-    border = "rounded"          -- Border style: "rounded", "single", "double", etc.
+    height = 10,                  -- Output window height
+    border = "rounded"            -- Border style: "rounded", "single", "double", etc.
   }
 })
 ```
