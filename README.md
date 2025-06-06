@@ -64,7 +64,7 @@ pip install nvchecker
 
 ### Automatic
 
-- Open any file named `*nvchecker.toml` (e.g., `nvchecker.toml`, `my-nvchecker.toml`)
+- Open any file named `*nvchecker.toml` (e.g., `.nvchecker.toml`, `appname-nvchecker.toml`, `nvchecker.toml`)
 - Save the file - nvchecker runs automatically
 - Results appear in a floating window
 
